@@ -19,11 +19,12 @@ class ViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.sectionInset = .init(top: 0, left: 10, bottom: 0, right: 10)
+        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-    //    collectionView.delegate = self
+        
         return collectionView
     }()
     
@@ -33,8 +34,6 @@ class ViewController: UIViewController {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
             cell.backgroundColor = .tertiaryLabel
             cell.layer.cornerRadius = 10
-          //  (cell as? RideItemCollectionViewCell)?.configure(with: item)
-       //     (cell as? RideItemCollectionViewCell)?.delegate = self
             return cell
         }
         
